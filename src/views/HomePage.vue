@@ -35,6 +35,6 @@ export default {
 <style scoped>
 .card {
   text-decoration: none;
-  color: #000;
+  color: black;
 }
 </style>

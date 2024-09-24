@@ -10,6 +10,7 @@ html {
 body {
   margin: 0;
   font-family: Tahoma;
+  background-color: rgb(240, 250, 255);
 }
 
 .navbar {
@@ -20,7 +21,7 @@ body {
   user-select: none;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .navbar .nav-link {
@@ -69,7 +70,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 

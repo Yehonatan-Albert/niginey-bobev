@@ -1,5 +1,5 @@
 <template>
-  <div v-if="composer">
+  <div v-if="composer.niginim.length">
     <title-setter :title="composer.displayName"></title-setter>
     <h1 class="title">{{ composer.displayName }}</h1>
     <div class="cards-container">
@@ -9,7 +9,7 @@
       </router-link>
     </div>
   </div>
-  <div v-else-if="!loading">
+  <div v-else>
     <not-found></not-found>
   </div>
 </template>
@@ -22,8 +22,7 @@ import TitleSetter from './TitleSetter.vue';
 export default {
   data() {
     return {
-      composer: null,
-      loading: true,
+      composer: null
     };
   },
   components: {
@@ -43,9 +42,7 @@ export default {
   },
   methods: {
     loadComposer() {
-      this.loading = true;
       this.composer = composers[this.composerKey];
-      this.loading = false;
     }
   }
 };
