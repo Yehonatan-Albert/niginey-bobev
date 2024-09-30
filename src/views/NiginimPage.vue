@@ -1,7 +1,7 @@
 <template>
     <div v-if="nigen">
       <title-setter :title="nigen.name"></title-setter>
-      
+      <breadcrumb :composerKey="composerKey" :nigenId="$route.params.id"></breadcrumb> <!-- פירור לחם -->
       <h1 class="title">{{ nigen.name }}</h1>
       <p class="composer">מאת: {{ composers[composerKey].displayName }}</p>
       <audio :src="`/niginim/${composerKey}/${nigen.src}`" controls autoplay></audio>
@@ -18,6 +18,7 @@
   import NotFound from './NotFoundPage.vue';
   import composers from '../data.json';
   import TitleSetter from './TitleSetter.vue';
+  import Breadcrumb from './Breadcrumb.vue';
   
   export default {
     data() {
@@ -25,12 +26,13 @@
         nigen: null,
         composerKey: null,  
         loading: true,
-        composers: composers, // נוסיף את זה כדי לגשת למידע על המלחין
+        composers: composers
       };
     },
     components: {
       NotFound,
-      TitleSetter
+      TitleSetter,
+      Breadcrumb
     },
     created() {
       this.loadNigen();

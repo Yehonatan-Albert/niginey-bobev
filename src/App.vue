@@ -5,12 +5,43 @@
         <img class="logo" src="/logo.png">
       </router-link>
       <router-link class="nav-link" to="/">דף הבית</router-link>
-      <a class="nav-link" href="javascript:gp=open('https://mail.google.com/mail/u/0/?tf=cm&to=nigineybobev@gmail.com','g','width=510,height=450,top=1000');onfocus=onclick=()=>gp.focus()">צור קשר</a>
-      <input id="search-input" placeholder="חיפוש...">
+      <a class="nav-link" href="javascript:gp=open('https://mail.google.com/mail/u/0/?tf=cm&to=nigineybobev@gmail.com','g',`width=600,height=400,top=${screen.height / 2 - 200},left=${screen.width / 2 - 300}`);onfocus=onclick=()=>gp.focus()">צור קשר</a>
+      <input id="search-input" placeholder="חיפוש..." v-model="query" @keyup="search">
     </div>
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      query: '',
+      previousRoute: null
+    };
+  },
+  watch: {
+    '$route.path': 'routeChange'
+  },
+  methods: {
+    search() {
+      if (this.query.trim()) {
+        if (this.$route.path != '/search') {
+          this.previousRoute = this.$route;
+        }
+        this.$router.push({ path: '/search', query: { q: this.query.trim() } });
+      } else if (this.previousRoute && this.$route.path == '/search') {
+        this.$router.push(this.previousRoute.fullPath);
+      }
+    },
+    routeChange() {
+      if (this.$route.path != '/search') {
+        this.query = '';
+      }
+    }
+  }
+};
+</script>
 
 <style scoped>
 #search-input {

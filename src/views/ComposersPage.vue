@@ -1,6 +1,7 @@
 <template>
-  <div v-if="composer.niginim.length">
+  <div v-if="composer">
     <title-setter :title="composer.displayName"></title-setter>
+    <breadcrumb :composerKey="composerKey"></breadcrumb> <!-- פירור לחם -->
     <h1 class="title">{{ composer.displayName }}</h1>
     <div class="cards-container">
       <router-link v-for="nigen in composer.niginim" :key="nigen.id" :to="`/nigen/${nigen.id}`" class="card">
@@ -18,6 +19,7 @@
 import NotFound from './NotFoundPage.vue';
 import composers from '../data.json';
 import TitleSetter from './TitleSetter.vue';
+import Breadcrumb from './Breadcrumb.vue';
 
 export default {
   data() {
@@ -27,7 +29,8 @@ export default {
   },
   components: {
     NotFound,
-    TitleSetter
+    TitleSetter,
+    Breadcrumb
   },
   computed: {
     composerKey() {

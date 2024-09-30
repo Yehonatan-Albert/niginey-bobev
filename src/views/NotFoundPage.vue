@@ -19,7 +19,7 @@ import TitleSetter from './TitleSetter.vue';
 
 export default {
   components: {
-    TitleSetter,
+    TitleSetter
   },
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
       };
 
       const frequency = notes[note];
-      if (!frequency) return;
+      // if (!frequency) return;
 
       this.audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
 
@@ -69,8 +69,8 @@ export default {
       if (this.gainNode) {
         this.gainNode.gain.exponentialRampToValueAtTime(0.00001, this.audioContext.currentTime + 1.5);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

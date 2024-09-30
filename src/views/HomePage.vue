@@ -12,7 +12,7 @@
 
 <script>
 import composers from '../data.json';
-import TitleSetter from '../views/TitleSetter.vue';
+import TitleSetter from './TitleSetter.vue';
 
 export default {
   data() {
@@ -24,7 +24,6 @@ export default {
     TitleSetter
   },
   created() {
-    // סידור המלחינים לפי כמות הניגונים בסדר יורד
     this.composers = Object.fromEntries(
       Object.entries(composers).sort((a, b) => b[1].niginim.length - a[1].niginim.length)
     );
