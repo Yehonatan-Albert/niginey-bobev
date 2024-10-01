@@ -9,7 +9,7 @@
           <div v-for="key in keys" :key="key + octave" class="key" :data-note="key + octave" @mousedown="startTone(key + octave)" @mouseup="stopTone" @contextmenu.prevent></div>
         </div>
       </div>
-      <router-link to="/">חזור לדף הראשי</router-link>
+      <router-link to="/">חזרה לדף הבית</router-link>
     </div>
   </div>
 </template>

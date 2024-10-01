@@ -5,8 +5,8 @@
         <img class="logo" src="/logo.png">
       </router-link>
       <router-link class="nav-link" to="/">דף הבית</router-link>
-      <a class="nav-link" href="javascript:gp=open('https://mail.google.com/mail/u/0/?tf=cm&to=nigineybobev@gmail.com','g',`width=600,height=400,top=${screen.height / 2 - 200},left=${screen.width / 2 - 300}`);onfocus=onclick=()=>gp.focus()">צור קשר</a>
-      <input id="search-input" placeholder="חיפוש..." v-model="query" @keyup="search">
+      <a class="nav-link" href="javascript:gp=open('https://mail.google.com/mail/u/0/?tf=cm&to=nigineybobev@gmail.com','g',`width=600,height=400,top=${screen.height/2-200},left=${screen.width/2-300}`);onfocus=onclick=()=>gp.focus()">צור קשר</a>
+      <input id="search-input" placeholder="חיפוש..." v-model="query" @input="search">
     </div>
     <router-view></router-view>
   </div>
