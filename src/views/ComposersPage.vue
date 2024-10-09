@@ -22,11 +22,9 @@ import TitleSetter from './TitleSetter.vue';
 import Breadcrumb from './Breadcrumb.vue';
 
 export default {
-  data() {
-    return {
-      composer: null
-    };
-  },
+  data: () => ({
+    composer: null
+  }),
   components: {
     NotFound,
     TitleSetter,

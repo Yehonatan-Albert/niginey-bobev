@@ -24,12 +24,10 @@ export default {
     NotFound,
     TitleSetter
   },
-  data() {
-    return {
-      query: '',
-      results: []
-    };
-  },
+  data: () => ({
+    query: '',
+    results: []
+  }),
   created() {
     this.search();
   },

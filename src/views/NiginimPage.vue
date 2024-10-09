@@ -21,14 +21,12 @@
   import Breadcrumb from './Breadcrumb.vue';
   
   export default {
-    data() {
-      return {
-        nigen: null,
-        composerKey: null,  
-        loading: true,
-        composers: composers
-      };
-    },
+    data: () => ({
+      nigen: null,
+      composerKey: null,  
+      loading: true,
+      composers: composers
+    }),
     components: {
       NotFound,
       TitleSetter,

@@ -15,11 +15,9 @@ import composers from '../data.json';
 import TitleSetter from './TitleSetter.vue';
 
 export default {
-  data() {
-    return {
-      composers: composers
-    }
-  },
+  data: () => ({
+    composers: composers
+  }),
   components: {
     TitleSetter
   },
