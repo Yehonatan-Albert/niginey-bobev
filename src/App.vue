@@ -1,9 +1,6 @@
-<!-- src\App.vue -->
 <template>
   <navbar></navbar>
-  <div class="router-view-container">
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
