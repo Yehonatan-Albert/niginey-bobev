@@ -3,7 +3,7 @@
     <title-setter title="הדף לא נמצא"></title-setter>
     <div class="not-found">
       <h1>הניגון שחיפשת לא נמצא...</h1>
-      <p>אבל אולי תנגן אותו בעצמך?</p>
+      <p>אולי תרצה לנגן אותו בעצמך?</p>
       <div class="piano" dir="ltr">
         <div class="octave" v-for="octave in octaves" :key="octave">
           <div v-for="key in keys" :key="key + octave" class="key" :data-note="key + octave" @mousedown="startTone(key, octave)" @mouseup="stopTone" @contextmenu.prevent></div>

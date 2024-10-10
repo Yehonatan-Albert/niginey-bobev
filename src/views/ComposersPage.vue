@@ -1,7 +1,7 @@
 <template>
   <div v-if="composer">
     <title-setter :title="composer.displayName"></title-setter>
-    <breadcrumb :composerKey="composerKey"></breadcrumb> <!-- פירור לחם -->
+    <breadcrumb :composerKey="composerKey"></breadcrumb>
     <h1 class="title">{{ composer.displayName }}</h1>
     <div class="cards-container">
       <router-link v-for="nigen in composer.niginim" :key="nigen.id" :to="`/nigen/${nigen.id}`" class="card">
