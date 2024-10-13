@@ -1,24 +1,15 @@
 <template>
   <nav class="breadcrumb">
-    <router-link to="/">דף הבית</router-link>
-    <span v-if="!nigenName"> / {{ currentComposer.displayName }}</span>
-    <span v-else>
-      / <router-link :to="`/composer/${composerKey}`">{{ currentComposer.displayName }}</router-link>
-      / {{ nigenName }}
+    <span v-for="(label, path) in links" class="breadcrumb-link">
+      <router-link :to="path">{{ label }}</router-link>
     </span>
+    <span>{{ active }}</span>
   </nav>
 </template>
 
 <script>
-import composers from '../data.json';
-
 export default {
-  props: ['composerKey', 'nigenName'],
-  computed: {
-    currentComposer() {
-      return composers[this.composerKey] || null;
-    }
-  }
+  props: ['links', 'active']
 };
 </script>
 
@@ -33,5 +24,9 @@ export default {
 }
 .breadcrumb span {
   color: #6c757d;
+}
+.breadcrumb-link::after {
+  content: "/";
+  margin: 0 5px;
 }
 </style>
