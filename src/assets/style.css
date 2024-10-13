@@ -13,42 +13,6 @@ body {
   background-color: rgb(240, 250, 255);
 }
 
-.navbar {
-  background: linear-gradient(to right, #87CEEB, #1E90FF);
-  overflow: hidden;
-  padding: 10px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.navbar .nav-link {
-  float: right;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s ease;
-  border-radius: 5px;
-  margin-right: 8px;
-}
-
-.navbar a:hover,
-.navbar a.router-link-active {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navbar .logo {
-  float: left;
-  padding: 0 20px;
-  margin: 0;
-  height: 50px;
-}
-
 .cards-container {
   display: flex;
   justify-content: center;
@@ -65,7 +29,7 @@ body {
   margin: 20px;
   padding: 20px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.2s ease;
   cursor: pointer;
 }
 

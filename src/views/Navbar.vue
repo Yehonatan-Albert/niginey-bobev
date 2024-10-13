@@ -39,6 +39,42 @@ export default {
 </script>
 
 <style scoped>
+.navbar {
+  background: linear-gradient(to right, #87CEEB, #1E90FF);
+  overflow: hidden;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .nav-link {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+.navbar a:hover,
+.navbar a.router-link-active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar .logo {
+  float: left;
+  padding: 0 20px;
+  margin: 0;
+  height: 50px;
+}
+
 #search-input {
   border: none;
   border-radius: 5px;
@@ -49,10 +85,12 @@ export default {
   background-color: #c6eeff;
   color: #1882cb;
 }
+
 #search-input::-webkit-input-placeholder {
   font-style: italic;
   color: #1882cb;
 }
+
 #search-input:hover, #search-input:focus {
   outline: 1px solid #1882cb !important;
 }

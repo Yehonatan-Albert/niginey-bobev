@@ -85,7 +85,7 @@ export default {
   border: 1px solid #333;
   background-color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: 0.2s;
 }
 
 .key[data-note*="#"] {
@@ -113,7 +113,7 @@ export default {
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2em;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .not-found a:hover {

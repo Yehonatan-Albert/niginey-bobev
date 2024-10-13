@@ -18,13 +18,16 @@ export default {
   margin: 20px;
   font-size: 16px;
 }
+
 .breadcrumb a {
   text-decoration: none;
   color: #007BFF;
 }
+
 .breadcrumb span {
   color: #6c757d;
 }
+
 .breadcrumb-link::after {
   content: "/";
   margin: 0 5px;
