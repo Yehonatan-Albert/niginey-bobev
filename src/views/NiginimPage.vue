@@ -1,7 +1,7 @@
 <template>
   <div v-if="nigen">
     <title-setter :title="nigen.name"></title-setter>
-    <breadcrumb :composerKey="composerKey" :nigenId="$route.params.id"></breadcrumb>
+    <breadcrumb :composerKey="composerKey" :nigenName="nigen.name"></breadcrumb>
     <h1 class="title">{{ nigen.name }}</h1>
     <p>מאת: {{ composers[composerKey].displayName }}</p>
     <audio :src="`/niginim/${composerKey}/${nigen.src}`" controls autoplay></audio>

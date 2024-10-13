@@ -1,10 +1,10 @@
 <template>
   <nav class="breadcrumb">
     <router-link to="/">דף הבית</router-link>
-    <span v-if="isComposerPage"> / {{ currentComposer.displayName }}</span>
-    <span v-else-if="isNigenPage">
+    <span v-if="!nigenName"> / {{ currentComposer.displayName }}</span>
+    <span v-else>
       / <router-link :to="`/composer/${composerKey}`">{{ currentComposer.displayName }}</router-link>
-      / {{ currentNigen.name }}
+      / {{ nigenName }}
     </span>
   </nav>
 </template>
@@ -13,19 +13,10 @@
 import composers from '../data.json';
 
 export default {
-  props: ['composerKey', 'nigenId'],
+  props: ['composerKey', 'nigenName'],
   computed: {
     currentComposer() {
       return composers[this.composerKey] || null;
-    },
-    currentNigen() {
-      return this.currentComposer?.niginim.find(n => n.id == this.nigenId) || null;
-    },
-    isComposerPage() {
-      return this.$route.path.includes('/composer');
-    },
-    isNigenPage() {
-      return this.$route.path.includes('/nigen');
     }
   }
 };
