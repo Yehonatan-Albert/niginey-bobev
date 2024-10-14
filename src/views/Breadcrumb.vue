@@ -1,6 +1,6 @@
 <template>
   <nav class="breadcrumb">
-    <span v-for="(label, path) in links">
+    <span v-for="(label, path) in links" class="breadcrumb-link">
       <router-link :to="path">{{ label }}</router-link>
     </span>
     <span>{{ active }}</span>
@@ -19,16 +19,16 @@ export default {
   font-size: 16px;
 }
 
-.breadcrumb span {
-  color: #6c757d;
-}
-
 .breadcrumb a {
   text-decoration: none;
   color: #007BFF;
 }
 
-.breadcrumb a::after {
+.breadcrumb span {
+  color: #6c757d;
+}
+
+.breadcrumb-link::after {
   content: "/";
   margin: 0 5px;
 }
